@@ -12,7 +12,7 @@ async function openrouterRequest(
   const apiKey = process.env.OPENROUTER_API_KEY;
   
   if (!apiKey) {
-    throw new Error('❌ OPENROUTER_API_KEY не указан в .env');
+    throw new Error(' OPENROUTER_API_KEY не указан в .env');
   }
 
   try {
@@ -35,12 +35,11 @@ async function openrouterRequest(
     
     return response.data.choices[0]?.message?.content || '';
   } catch (error: any) {
-    console.error('❌ Ошибка запроса к OpenRouter:', error.response?.data || error.message);
+    console.error('Ошибка запроса к OpenRouter:', error.response?.data || error.message);
     throw error;
   }
 }
 
-// ============ ФУНКЦИИ С ПРАВИЛЬНЫМИ ПРОМПТАМИ ============
 
 export const generateTagline = async (): Promise<string> => {
   try {
