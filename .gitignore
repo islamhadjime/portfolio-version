@@ -1,0 +1,25 @@
+# Все node_modules в любых папках
+**/node_modules/
+**/dist/
+**/.env
+**/.env.local
+
+# Логи
+**/*.log
+npm-debug.log*
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Builds
+**/build/
+**/dist/
+**/.next/
+
+# TypeScript
+**/*.tsbuildinfo
