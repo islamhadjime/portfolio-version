@@ -10,6 +10,12 @@ const transporter = nodemailer.createTransport({
     user: process.env.SMTP_USER,
     pass: process.env.SMTP_PASS,
   },
+  // РЕШЕНИЕ ПРОБЛЕМЫ
+  tls: {
+    rejectUnauthorized: false
+  },
+  socketTimeout: 30000,
+  connectionTimeout: 30000,
 });
 
 export const sendEmails = async (data: ContactFormData) => {
