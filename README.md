@@ -10,7 +10,7 @@
 - Форму обратной связи с отправкой писем владельцу и пользователю
 - AI-интеграцию для улучшения текста комментариев
 
-**[🚀 Смотреть демо](https://portfolio-version-4afryoykm-islamhadjimes-projects.vercel.app/)** | **[📁 GitHub репозиторий](https://github.com/islamhadjime/portfolio-version)**
+**[🚀 Смотреть демо](https://portfolio-version.vercel.app/)** | **[📁 GitHub репозиторий](https://github.com/islamhadjime/portfolio-version)**
 
 ## 🛠 Технологический стек
 
