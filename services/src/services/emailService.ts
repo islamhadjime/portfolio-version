@@ -10,7 +10,7 @@ const transporter = nodemailer.createTransport({
     user: process.env.SMTP_USER,
     pass: process.env.SMTP_PASS,
   },
-  // РЕШЕНИЕ ПРОБЛЕМЫ
+  family: 4,
   tls: {
     rejectUnauthorized: false
   },
