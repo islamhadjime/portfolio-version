@@ -11,10 +11,7 @@ const transporter = nodemailer.createTransport({
     user: process.env.SMTP_USER,
     pass: process.env.SMTP_PASS,
   },
-} as any); 
-
-transporter.options.connectionTimeout = 30000;
-transporter.options.socketTimeout = 30000;
+});
 
 export const sendEmails = async (data: ContactFormData) => {
   const { name, email, phone, comment } = data;
