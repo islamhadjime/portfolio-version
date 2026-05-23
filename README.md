@@ -1,13 +1,16 @@
-Лендинг-презентация fullstack-разработчика с формой обратной связи и интеграцией AI для улучшения текста
+# Портфолио-лендинг с AI-интеграцией
+
+> Лендинг-презентация fullstack-разработчика с формой обратной связи и интеграцией AI для улучшения текста
 
 ## 📋 О проекте
+![Photo](https://github.com/islamhadjime/portfolio-version/blob/main/client/src/assets/screen22.png  "React-prort")
 
 Лендинг-презентация, демонстрирующая мои навыки как разработчика. Проект включает:
 - Информацию о стеке технологий, опыте и направлениях разработки
 - Форму обратной связи с отправкой писем владельцу и пользователю
 - AI-интеграцию для улучшения текста комментариев
 
-**[🚀 Смотреть демо](#)** | **[📁 GitHub репозиторий](#)**
+**[🚀 Смотреть демо](https://portfolio-version.vercel.app)** | **[📁 GitHub репозиторий](https://github.com/islamhadjime/portfolio-version)**
 
 ## 🛠 Технологический стек
 
@@ -35,99 +38,73 @@
 | Сервис | Назначение |
 |--------|------------|
 | **Render** | Backend хостинг |
-| **Vercel** | Frontend хостинг |
+| **Vercel** | Frontend хosting |
 
 ## 📁 Структура проекта
-
-\`\`\`
 portfolio/
-├── client/                    # Frontend (React + Vite)
-│   ├── src/
-│   │   ├── components/        # React компоненты
-│   │   │   ├── ContactForm.tsx    # Форма обратной связи
-│   │   │   ├── Hero.tsx           # Главный блок
-│   │   │   ├── About.tsx          # О себе
-│   │   │   ├── Experience.tsx     # Опыт и подход
-│   │   │   ├── Cases.tsx          # Кейсы/проекты
-│   │   │   └── Footer.tsx         # Контакты
-│   │   ├── styles/            # SCSS модули
-│   │   ├── hooks/             # Кастомные хуки
-│   │   ├── types/             # TypeScript типы
-│   │   ├── App.tsx
-│   │   └── main.tsx
-│   ├── index.html
-│   ├── vite.config.ts
-│   └── package.json
+├── client/ # Frontend (React + Vite)
+│ ├── src/
+│ │ ├── components/ # React компоненты
+│ │ │ ├── Contact.tsx # Форма обратной связи
+│ │ │ ├── Hero.tsx # Главный блок
+│ │ │ ├── About.tsx # О себе
+│ │ │ ├── Experience.tsx # Опыт и подход
+│ │ │ ├── Cases.tsx # Кейсы/проекты
+│ │ │ └── Footer.tsx # Контакты
+│ │ ├── styles/ # SCSS модули
+│ │ ├── hooks/ # Кастомные хуки
+│ │ ├── types/ # TypeScript типы
+│ │ ├── App.tsx
+│ │ └── main.tsx
+│ ├── index.html
+│ ├── vite.config.ts
+│ └── package.json
 │
-├── services/                  # Backend (Express)
-│   ├── src/
-│   │   ├── controllers/       # Контроллеры
-│   │   │   ├── aiController.ts    # AI эндпоинты
-│   │   │   └── contactController.ts
-│   │   ├── services/          # Бизнес-логика
-│   │   │   ├── aiService.ts       # AI запросы
-│   │   │   └── emailService.ts    # Отправка писем
-│   │   ├── routes/            # Маршруты
-│   │   │   ├── aiRoutes.ts
-│   │   │   └── contactRoutes.ts
-│   │   ├── middlewares/       # Мидлвары
-│   │   │   └── errorHandler.ts
-│   │   └── index.ts
-│   ├── .env
-│   └── package.json
+├── services/ # Backend (Express)
+│ ├── src/
+│ │ ├── controllers/ # Контроллеры
+│ │ │ ├── aiController.ts # AI эндпоинты
+│ │ │ └── contactController.ts
+│ │ ├── services/ # Бизнес-логика
+│ │ │ ├── aiService.ts # AI запросы
+│ │ │ └── emailService.ts # Отправка писем
+│ │ ├── routes/ # Маршруты
+│ │ │ ├── aiRoutes.ts
+│ │ │ └── contactRoutes.ts
+│ │ ├── middlewares/ # Мидлвары
+│ │ │ └── errorHandler.ts
+│ │ └── index.ts
+│ ├── .env
+│ └── package.json
 │
 ├── .gitignore
 └── README.md
 
+text
 
 ## 🚀 Запуск проекта
 
 ### Требования
 - Node.js 20.19+ или 22.12+
 - npm 10+
-- Gmail аккаунт (для отправки писем)
 
 ### 1. Клонирование репозитория
 
 ```bash
-git clone <repository-url>
-cd portfolio
+git clone https://github.com/islamhadjime/portfolio-version.git
+cd portfolio-version
 2. Настройка Backend
 bash
-# Переход в папку backend
 cd services
-
-# Установка зависимостей
 npm install
-
-# Создание файла с переменными окружения
 cp .env.example .env
-
-# Настройка .env (см. таблицу ниже)
-# Запуск в режиме разработки
+# Заполните .env своими данными
 npm run dev
-
-# Сборка для продакшена
-npm run build
-
-# Запуск собранного проекта
-npm start
 3. Настройка Frontend
 bash
-# В новом терминале
 cd client
-
-# Установка зависимостей
 npm install
-
-# Запуск в режиме разработки
 npm run dev
-
-# Сборка для продакшена
-npm run build
-
-# Предпросмотр сборки
-npm run preview
 4. Переменные окружения
 Backend (.env)
 
@@ -154,7 +131,7 @@ text
 Валидация формы
 Поле	Правила валидации
 Имя	Обязательное, минимум 2 символа
-Телефон	Обязательный, формат +7 XXX XXX-XX-XX
+Телефон	Формат +7 XXX XXX-XX-XX
 Email	Обязательный, корректный формат email
 Комментарий	Обязательный, минимум 10 символов
 Состояния формы
@@ -164,44 +141,9 @@ Success - успешная отправка, форма очищается, по
 
 Error - ошибка отправки, показывается сообщение об ошибке
 
-API Endpoint
-javascript
-POST /api/contact
-Content-Type: application/json
-
-{
-  "name": "Иван Иванов",
-  "phone": "+7 999 123-45-67",
-  "email": "user@example.com",
-  "message": "Хочу заказать разработку сайта"
-}
-Ответы:
-
-javascript
-// Успех
-{ "success": true, "message": "Письмо отправлено" }
-
-// Ошибка валидации
-{ "success": false, "error": "Некорректный email" }
-
-// Ошибка сервера
-{ "success": false, "error": "Ошибка отправки" }
-Отправка писем
-При отправке формы генерируются два письма:
-
-Владельцу - уведомление с контактными данными пользователя и текстом сообщения
-
-Пользователю - подтверждение получения сообщения с благодарностью
-
 🤖 AI-интеграция
 Используемый сервис
-OpenRouter API - агрегатор AI-моделей, предоставляющий бесплатный доступ к моделям:
-
-openrouter/free (автовыбор лучшей бесплатной модели)
-
-meta-llama/llama-4-maverick:free
-
-google/gemini-2.0-flash-exp:free
+OpenRouter API - агрегатор AI-моделей с бесплатным доступом
 
 API Endpoints
 Метод	Эндпоинт	Описание
@@ -209,25 +151,13 @@ GET	/api/ai/tagline	Генерация вдохновляющей фразы
 POST	/api/ai/improve	Улучшение текста (грамматика, стиль)
 POST	/api/ai/generate-quiz	Генерация вопроса для квиза
 POST	/api/ai/check-answer	Проверка ответа с пояснением
-GET	/api/ai/health	Проверка статуса API
 Пример использования AI
-Улучшение текста:
-
 bash
-curl -X POST http://localhost:5000/api/ai/improve \
+curl -X POST https://portfolio-version.onrender.com/api/ai/improve \
   -H "Content-Type: application/json" \
   -d '{"text":"я зделал ошибку"}'
 
 # Ответ: { "improved": "Я сделал ошибку" }
-Промпт-инжиниринг
-Для получения ответов на русском языке используются:
-
-System prompt с явным указанием "отвечай только на русском"
-
-Ограничение формата ответа (JSON или чистый текст)
-
-Контроль длины ответа через max_tokens
-
 🎨 Что сделано с помощью AI
 Первичная структура компонентов формы обратной связи
 
@@ -238,50 +168,27 @@ System prompt с явным указанием "отвечай только на
 Базовые стили для адаптивного дизайна
 
 🔧 Что пришлось исправлять вручную
-1. Проблемы с GigaChat API
-Ошибка самоподписанного SSL-сертификата
+Проблемы с GigaChat API - переход на OpenRouter
 
-Нерабочие ключи авторизации
+AI отвечал на английском - добавлены русские system prompt
 
-Решение: Переход на OpenRouter с бесплатными моделями
+CORS при разработке - настройка динамического CORS
 
-2. AI отвечал на английском
-Модели OpenRouter по умолчанию отвечали на английском
+Валидация формы - маска телефона +7
 
-Решение: Переписал все промпты, добавил строгие system prompt
-
-Добавил явные указания "Отвечай ТОЛЬКО на русском языке"
-
-3. CORS при разработке
-Разные порты у фронта (5173) и бэка (5000)
-
-Решение: Настроил динамический CORS с разрешенными источниками
-
-4. Валидация формы
-Маска для телефона в формате +7
-
-Кастомные правила для React Hook Form
-
-Обработка асинхронных состояний
-
-5. Отправка писем
-Настройка пароля приложения для Gmail (не обычный пароль)
-
-Обработка ошибок SMTP
-
-Форматирование HTML-писем
+Отправка писем на бесплатном хостинге - код готов, но Render блокирует SMTP (для демо используется заглушка)
 
 🌟 Особенности реализации
 Frontend
-✅ Полностью адаптивный дизайн (мобильные, планшеты, десктоп)
+✅ Полностью адаптивный дизайн
 
 ✅ Валидная семантическая верстка
 
 ✅ TypeScript типы для всех компонентов
 
-✅ SCSS модули с переменными и микшинами
+✅ SCSS модули с переменными
 
-✅ Обработка всех состояний формы (loading/success/error)
+✅ Обработка всех состояний формы
 
 ✅ Уведомления через Sonner
 
@@ -290,31 +197,25 @@ Backend
 
 ✅ Валидация входящих данных
 
-✅ Транзакционная отправка писем
-
-✅ Обработка ошибок с понятными сообщениями
+✅ Обработка ошибок
 
 ✅ Кэширование AI-токенов
-
-✅ Rate limiting для AI запросов
 
 AI
 ✅ Бесплатные модели OpenRouter
 
-✅ Принудительный русский язык в ответах
-
-✅ Кэширование токенов для оптимизации
+✅ Принудительный русский язык
 
 ✅ Обработка ошибок с fallback-ответами
 
 📊 Оценка выполнения требований
 Требование	Выполнение
-Информация о себе (стек, опыт)	✅
+Информация о себе	✅
 Как работает с AI	✅
 Кейсы/проекты	✅
 Контакты	✅
 Форма обратной связи	✅
-Отправка писем (владельцу + пользователю)	✅
+Отправка писем	✅
 Обработка ошибок	✅
 Loading/success/error состояния	✅
 Адаптивность	✅
@@ -324,46 +225,31 @@ AI-интеграция	✅
 README	✅
 🚀 Деплой
 Backend (Render)
-bash
-# 1. Залейте код на GitHub
-git push origin main
+Залейте код на GitHub
 
-# 2. На render.com создайте Web Service
-# 3. Подключите репозиторий
-# 4. Добавьте переменные окружения
-# 5. Нажмите Deploy
+На render.com создайте Web Service
+
+Укажите Root Directory: services
+
+Добавьте переменные окружения
+
+Нажмите Deploy
+
 Frontend (Vercel)
 bash
-# Установите Vercel CLI
 npm i -g vercel
-
-# Запустите деплой
 cd client
 vercel --prod
-Прямые ссылки после деплоя:
-Frontend: [ссылка на Vercel]
-
-Backend API: [ссылка на Render]
-
 🔗 API Документация
-Форма обратной связи
 bash
-POST https://api-url.onrender.com/api/contact
-AI улучшение текста
-bash
-POST https://api-url.onrender.com/api/ai/improve
-Генерация фразы
-bash
-GET https://api-url.onrender.com/api/ai/tagline
-Генерация вопроса
-bash
-POST https://api-url.onrender.com/api/ai/generate-quiz
-Проверка ответа
-bash
-POST https://api-url.onrender.com/api/ai/check-answer
-Проверка здоровья
-bash
-GET https://api-url.onrender.com/api/ai/health
+# Форма обратной связи
+POST https://portfolio-version.onrender.com/api/contact
+
+# AI улучшение текста
+POST https://portfolio-version.onrender.com/api/ai/improve
+
+# Генерация фразы
+GET https://portfolio-version.onrender.com/api/ai/tagline
 📝 Выводы
 В ходе выполнения тестового задания я:
 
@@ -382,10 +268,12 @@ GET https://api-url.onrender.com/api/ai/health
 👨‍💻 Контакты
 Email: islam.hadjime@gmail.com
 
-GitHub: [ссылка на профиль]
+GitHub: https://github.com/islamhadjime
 
-Telegram: [@username]
+Telegram: @history_none
 
-📅 Дата выполнения: 22 мая 2026
-⏱ Время выполнения: [указать время]
+📅 Дата выполнения: 23 мая 2026
 📍 Версия: 1.0.0
+
+
+
