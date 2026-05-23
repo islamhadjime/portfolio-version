@@ -2,6 +2,7 @@ import nodemailer from 'nodemailer';
 import { ContactFormData } from '../types/contact';
 import dotenv from 'dotenv';
 dotenv.config();
+
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST,
   port: Number(process.env.SMTP_PORT),
@@ -10,13 +11,10 @@ const transporter = nodemailer.createTransport({
     user: process.env.SMTP_USER,
     pass: process.env.SMTP_PASS,
   },
-  family: 4,
-  tls: {
-    rejectUnauthorized: false
-  },
-  socketTimeout: 30000,
-  connectionTimeout: 30000,
-});
+} as any); 
+
+transporter.options.connectionTimeout = 30000;
+transporter.options.socketTimeout = 30000;
 
 export const sendEmails = async (data: ContactFormData) => {
   const { name, email, phone, comment } = data;
