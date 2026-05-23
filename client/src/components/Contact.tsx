@@ -1,5 +1,4 @@
 import { useForm } from 'react-hook-form';
-import { toast } from 'sonner';
 import { useState } from 'react';
 import axios from 'axios';
 
@@ -39,11 +38,11 @@ export default function Contact() {
     setLoading(true);
     try {
       await axios.post(`${import.meta.env.VITE_API_URL}/api/contact`, data);
-      showModal('success', 'Успешно! 🎉', 'Сообщение отправлено! Копия пришла вам на почту.');
+      showModal('success', 'Успешно! ', 'Сообщение отправлено! Копия пришла вам на почту.');
       reset();
     } catch (err: any) {
       const errorMsg = err.response?.data?.error || 'Ошибка отправки. Попробуйте позже.';
-      showModal('error', 'Ошибка ❌', errorMsg);
+      showModal('error', 'Ошибка ', errorMsg);
     } finally {
       setLoading(false);
     }
@@ -52,7 +51,7 @@ export default function Contact() {
   const improveComment = async () => {
     const comment = getValues('comment');
     if (!comment.trim()) {
-      showModal('warning', 'Внимание ⚠️', 'Напишите сообщение для улучшения');
+      showModal('warning', 'Внимание', 'Напишите сообщение для улучшения');
       return;
     }
     setImproving(true);
