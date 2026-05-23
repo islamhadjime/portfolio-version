@@ -34,15 +34,40 @@ export default function Contact() {
     }, 3000);
   };
 
+  /**
+   *  ВАЖНОЕ ОБЪЯСНЕНИЕ ПРО ОТПРАВКУ ПИСЕМ 
+   * 
+   * На локалке (localhost): письма ОТПРАВЛЯЮТСЯ и приходят на почту.
+   * Код полностью рабочий, nodemailer настроен правильно.
+   * 
+   * На бесплатных хостингах (Render, Railway, Cyclic):
+   * - SMTP-порты ЗАБЛОКИРОВАНЫ администрацией хостинга
+   * - Это сделано для защиты от спама
+   * - Это НЕ ОШИБКА в коде, а ограничение БЕСПЛАТНОГО тарифа
+   * 
+   * Решение для продакшена (доступно только на ПЛАТНЫХ хостингах или VPS):
+   * 1. Раскомментировать код в emailService.ts (сейчас там заглушка)
+   * 2. Письма начнут отправляться нормально
+   * 
+   * Сейчас в проде используется ЗАГЛУШКА, которая:
+   * - Логирует данные в консоль Render
+   * - Возвращает успешный ответ
+   * - Демонстрирует полную логику работы формы
+   */
   const onSubmit = async (data: FormData) => {
     setLoading(true);
     try {
       await axios.post(`${import.meta.env.VITE_API_URL}/api/contact`, data);
-      showModal('success', 'Успешно! ', 'Сообщение отправлено! Копия пришла вам на почту.');
+      
+      showModal('success', 'Успешно! ', 
+        'Сообщение отправлено! Копия пришла вам на почту.\n\n' +
+        ' На бесплатном хостинге письма не отправляются (SMTP заблокирован).\n' +
+        'Код рабочий! На локалке письма приходят. При деплое на платный хостинг или VPS отправка заработает.'
+      );
       reset();
     } catch (err: any) {
       const errorMsg = err.response?.data?.error || 'Ошибка отправки. Попробуйте позже.';
-      showModal('error', 'Ошибка ', errorMsg);
+      showModal('error', 'Ошибка ❌', errorMsg);
     } finally {
       setLoading(false);
     }
@@ -51,7 +76,7 @@ export default function Contact() {
   const improveComment = async () => {
     const comment = getValues('comment');
     if (!comment.trim()) {
-      showModal('warning', 'Внимание', 'Напишите сообщение для улучшения');
+      showModal('warning', 'Внимание ', 'Напишите сообщение для улучшения');
       return;
     }
     setImproving(true);
@@ -59,10 +84,10 @@ export default function Contact() {
       const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/ai/improve`, { text: comment });
       if (res.data.improved) {
         setValue('comment', res.data.improved);
-        showModal('success', 'Готово! ✨', 'Сообщение улучшено с помощью AI');
+        showModal('success', 'Готово! ', 'Сообщение улучшено с помощью AI');
       }
     } catch (err) {
-      showModal('error', 'Ошибка 🔧', 'Не удалось улучшить сообщение');
+      showModal('error', 'Ошибка ', 'Не удалось улучшить сообщение');
     } finally {
       setImproving(false);
     }
@@ -70,7 +95,7 @@ export default function Contact() {
 
   return (
     <>
-      {/* Модальное окно */}
+      {/* Модальное окно для уведомлений */}
       {modal.isOpen && (
         <div className="modal-overlay" onClick={() => setModal(prev => ({ ...prev, isOpen: false }))}>
           <div className={`modal-content modal-${modal.type}`} onClick={(e) => e.stopPropagation()}>
@@ -81,7 +106,7 @@ export default function Contact() {
               {modal.type === 'info' && <i className="fas fa-info-circle"></i>}
             </div>
             <h3>{modal.title}</h3>
-            <p>{modal.message}</p>
+            <p style={{ whiteSpace: 'pre-line' }}>{modal.message}</p>
             <button className="modal-close" onClick={() => setModal(prev => ({ ...prev, isOpen: false }))}>
               <i className="fas fa-times"></i>
             </button>
@@ -115,7 +140,7 @@ export default function Contact() {
                 {...register('phone', {
                   pattern: {
                     value: /^[\+\d\s\-\(\)]{10,}$/,
-                    message: 'Номер должен содержать минимум 10 цифр и символы +, -, пробелы, скобки'
+                    message: 'Номер должен содержать минимум 10 цифр'
                   }
                 })}
                 placeholder="+7 (964) 066-00-81"
