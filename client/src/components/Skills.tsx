@@ -23,8 +23,8 @@ export default function Skills() {
           <i className="fas fa-cloud-upload-alt"></i>
           <h3>DevOps & Tools</h3>
           <div className="skill-tags">
-            <span>Docker</span><span>Nginx</span><span>CI/CD</span><span>Git</span>
-            <span>Jest</span><span>Storybook</span><span>VPS</span><span>Webpack</span>
+            <span>Nginx</span><span>CI/CD</span><span>Git</span>
+            <span>Jest</span><span>VPS</span><span>Webpack</span>
           </div>
         </div>
       </div>
