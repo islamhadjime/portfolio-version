@@ -12,9 +12,9 @@ export default function Experience() {
           <ul>
             <li>Разработал UI по Figma, адаптивная кроссбраузерная вёрстка</li>
             <li>Создал библиотеку из 15+ переиспользуемых компонентов → сокращение времени разработки на 30%</li>
-            <li>Оптимизировал загрузку страницы на 25% (code splitting, lazy loading)</li>
-            <li>Уменьшил бандл с 2.1 МБ до 1.4 МБ, покрытие тестами (Jest, RTL) — 75%</li>
-            <li>Стек: React, Redux Toolkit, TypeScript, SCSS, Webpack, Storybook</li>
+            {/* <li>Оптимизировал загрузку страницы на 25% (code splitting, lazy loading)</li>
+            <li>Уменьшил бандл с 2.1 МБ до 1.4 МБ, покрытие тестами (Jest, RTL) — 75%</li> */}
+            <li>Стек: React, Redux Toolkit,SCSS, Webpack</li>
           </ul>
         </div>
         <div className="timeline-item glass-card">
