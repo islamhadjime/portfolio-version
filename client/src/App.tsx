@@ -8,6 +8,7 @@ import Contact from './components/Contact';
 import Quiz from './components/Quiz';
 import Footer from './components/Footer';
 import Projects from './components/Projects';
+import GamesSection from './features/games/GamesSection';
 
 import { Toaster } from 'sonner';
 
@@ -21,6 +22,7 @@ function App() {
         <Experience />
         <Skills />
         <Projects />
+        <GamesSection />
         <Workflow />
         <Quiz />
         <Contact />
