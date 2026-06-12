@@ -7,6 +7,7 @@ import Workflow from './components/Workflow';
 import Contact from './components/Contact';
 import Quiz from './components/Quiz';
 import Footer from './components/Footer';
+import Projects from './components/Projects';
 
 import { Toaster } from 'sonner';
 
@@ -19,6 +20,7 @@ function App() {
         <Hero />
         <Experience />
         <Skills />
+        <Projects />
         <Workflow />
         <Quiz />
         <Contact />
