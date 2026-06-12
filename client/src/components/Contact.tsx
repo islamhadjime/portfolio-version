@@ -67,7 +67,7 @@ export default function Contact() {
       reset();
     } catch (err: any) {
       const errorMsg = err.response?.data?.error || 'Ошибка отправки. Попробуйте позже.';
-      showModal('error', 'Ошибка ❌', errorMsg);
+      showModal('error', 'Ошибка', errorMsg);
     } finally {
       setLoading(false);
     }
