@@ -94,24 +94,29 @@ export const projects: Project[] = [
     linkLabel: 'Демо',
   },
   {
-    id: 'MVP Projects',
+    id: 'Pulse-Meet-Full-Source-Code',
     category: 'frelance',
-    title: 'MVP Projects',
-    subtitle: 'Дашборд для образовательного проекта',
+    title: 'Pulse Meet Full Source Code',
+    subtitle: 'Мини социальная сеть для знакомств',
     description:
-      'Веб-дашборд для мониторинга учебного процесса: статистика, управление контентом и отчёты для администраторов.',
+      'Полное исходное кодо для платформы Pulse Meet',
     role: 'Fullstack-разработчик',
     period: '2023 — 2025',
-    images: [
-      '/projects/frelance/21c56a56c6cb0df2e7c09b68e3b8140c0c7996f1-1778053974.webp',
-      '/projects/frelance/30d4a01d171bdfdc01766dd8026f767d5d65e893-1778052510.webp',
+    images: ['/projects/frelance/Pulse-Meet-Full-Source-Code.png'],
+    achievements: ['Разработал полное исходное кодо для платформы Pulse Meet'],
+    stack: [
+      'React',
+      'TypeScript',
+      'Node.js',
+      'Next.js',
+      'PostgreSQL',
+      'JWT',
+      'Django REST',
+      'Docker',
+      'Tailwind',
     ],
-    achievements: [
-      'Спроектировал интерфейс дашборда с ключевыми метриками',
-      'Реализовал фильтрацию, экспорт и импорт данных',
-      'Настроил REST API и ролевую авторизацию',
-    ],
-    stack: ['React', 'TypeScript', 'Django', 'PostgreSQL', 'SCSS'],
+    link: 'https://youtu.be/-zhhre7_hvE?si=HSRM4LMqxQwx3jqz',
+    linkLabel: 'Демо',
   },
   {
     id: 'tax-referent',
@@ -138,7 +143,6 @@ export const projects: Project[] = [
     link: '#',
     linkLabel: 'Демо',
   },
-
   {
     id: 'ege-leadership',
     category: 'frelance',
@@ -154,31 +158,25 @@ export const projects: Project[] = [
     link: 'https://ruoshali.tw1.ru/c/ege-leadership',
     linkLabel: 'ege-leadership.ru',
   },
-
   {
-    id: 'Pulse-Meet-Full-Source-Code',
+    id: 'MVP Projects',
     category: 'frelance',
-    title: 'Pulse Meet Full Source Code',
-    subtitle: 'Мини социальная сеть для знакомств',
+    title: 'MVP Projects',
+    subtitle: 'Дашборд для образовательного проекта',
     description:
-      'Полное исходное кодо для платформы Pulse Meet',
+      'Веб-дашборд для мониторинга учебного процесса: статистика, управление контентом и отчёты для администраторов.',
     role: 'Fullstack-разработчик',
     period: '2023 — 2025',
-    images: ['/projects/frelance/Pulse-Meet-Full-Source-Code.png'],
-    achievements: ['Разработал полное исходное кодо для платформы Pulse Meet'],
-    stack: [
-      'React',
-      'TypeScript',
-      'Node.js',
-      'Next.js',
-      'PostgreSQL',
-      'JWT',
-      'Django REST',
-      'Docker',
-      'Tailwind',
+    images: [
+      '/projects/frelance/21c56a56c6cb0df2e7c09b68e3b8140c0c7996f1-1778053974.webp',
+      '/projects/frelance/30d4a01d171bdfdc01766dd8026f767d5d65e893-1778052510.webp',
     ],
-    link: 'https://youtu.be/-zhhre7_hvE?si=HSRM4LMqxQwx3jqz',
-    linkLabel: 'Демо',
+    achievements: [
+      'Спроектировал интерфейс дашборда с ключевыми метриками',
+      'Реализовал фильтрацию, экспорт и импорт данных',
+      'Настроил REST API и ролевую авторизацию',
+    ],
+    stack: ['React', 'TypeScript', 'Django', 'PostgreSQL', 'SCSS'],
   },
 ];
 
