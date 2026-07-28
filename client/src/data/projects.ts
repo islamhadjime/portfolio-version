@@ -81,11 +81,7 @@ export const projects: Project[] = [
     role: 'Fullstack-разработчик',
     period: '2023 — 2025',
     images: [
-        '/projects/frelance/kvant-management/1.jpg', 
-        '/projects/frelance/kvant-management/2.jpg', 
-        '/projects/frelance/kvant-management/3.jpg',
-        '/projects/frelance/kvant-management/4.jpg',
-        '/projects/frelance/kvant-management/5.jpg',
+        '/projects/frelance/CODE.png', 
     ],
     achievements: [
       'Разработал админ-панель с дашбордами и аналитикой',
