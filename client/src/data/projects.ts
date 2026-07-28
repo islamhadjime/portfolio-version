@@ -44,8 +44,6 @@ export const projects: Project[] = [
       'Деплой на VPS: Docker, Nginx, подключение домена',
     ],
     stack: ['React Native', 'Expo', 'TypeScript', 'Zustand', 'Tailwind', 'Django REST', 'PostgreSQL'],
-    link: '#',
-    // linkLabel: 'doshapp.ru',
   },
   {
     id: 'kf21',
@@ -140,8 +138,6 @@ export const projects: Project[] = [
       'Деплой на PythonAnywhere',
     ],
     stack: ['HTML/CSS/JS', 'Django', 'SQL', 'Python'],
-    link: '#',
-    // linkLabel: 'Демо',
   },
   {
     id: 'ege-leadership',
