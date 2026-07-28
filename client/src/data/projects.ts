@@ -45,7 +45,7 @@ export const projects: Project[] = [
     ],
     stack: ['React Native', 'Expo', 'TypeScript', 'Zustand', 'Tailwind', 'Django REST', 'PostgreSQL'],
     link: '#',
-    linkLabel: 'doshapp.ru',
+    // linkLabel: 'doshapp.ru',
   },
   {
     id: 'kf21',
@@ -141,7 +141,7 @@ export const projects: Project[] = [
     ],
     stack: ['HTML/CSS/JS', 'Django', 'SQL', 'Python'],
     link: '#',
-    linkLabel: 'Демо',
+    // linkLabel: 'Демо',
   },
   {
     id: 'ege-leadership',
