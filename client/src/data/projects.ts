@@ -44,7 +44,7 @@ export const projects: Project[] = [
       'Деплой на VPS: Docker, Nginx, подключение домена',
     ],
     stack: ['React Native', 'Expo', 'TypeScript', 'Zustand', 'Tailwind', 'Django REST', 'PostgreSQL'],
-    link: 'https://doshapp.ru/',
+    link: '#',
     linkLabel: 'doshapp.ru',
   },
   {
@@ -94,7 +94,7 @@ export const projects: Project[] = [
       'Деплой на Vercel, адаптивная вёрстка',
     ],
     stack: ['React', 'TypeScript', 'Node.js', 'Express', 'PostgreSQL', 'JWT'],
-    link: 'https://kvant-management-platform.vercel.app/',
+    link: 'https://youtu.be/xYrM4q7Ufus?si=9mPVt5alNaK1SkBr',
     linkLabel: 'Демо',
   },
   {
@@ -139,7 +139,49 @@ export const projects: Project[] = [
       'Деплой на PythonAnywhere',
     ],
     stack: ['HTML/CSS/JS', 'Django', 'SQL', 'Python'],
-    link: 'https://hadjime.pythonanywhere.com',
+    link: '#',
+    linkLabel: 'Демо',
+  },
+
+  {
+    id: 'ege-leadership',
+    category: 'frelance',
+    title: 'EGE Leadership',
+    subtitle: 'Система управления образовательными проектами',
+    description:
+      'Аналитический модуль для системы управления образовательными проектами',
+    role: 'Frontend-разработчик React',
+    period: 'Сен 2025 — наст. время',
+    images: ['/projects/frelance/ANALITIC.jpg'],
+    achievements: ['Разработал аналитический модуль для системы управления образовательными проектами'],
+    stack: ['React', 'TypeScript', 'Django', 'PostgreSQL', 'SCSS', 'Chart.js'],
+    link: 'https://ruoshali.tw1.ru/c/ege-leadership',
+    linkLabel: 'ege-leadership.ru',
+  },
+
+  {
+    id: 'Pulse-Meet-Full-Source-Code',
+    category: 'frelance',
+    title: 'Pulse Meet Full Source Code',
+    subtitle: 'Мини социальная сеть для знакомств',
+    description:
+      'Полное исходное кодо для платформы Pulse Meet',
+    role: 'Fullstack-разработчик',
+    period: '2023 — 2025',
+    images: ['/projects/frelance/Pulse-Meet-Full-Source-Code.png'],
+    achievements: ['Разработал полное исходное кодо для платформы Pulse Meet'],
+    stack: [
+      'React',
+      'TypeScript',
+      'Node.js',
+      'Next.js',
+      'PostgreSQL',
+      'JWT',
+      'Django REST',
+      'Docker',
+      'Tailwind',
+    ],
+    link: 'https://youtu.be/-zhhre7_hvE?si=HSRM4LMqxQwx3jqz',
     linkLabel: 'Демо',
   },
 ];
