@@ -123,7 +123,7 @@ export default function Contact() {
             <div><i className="fab fa-telegram"></i> @history_none</div>
             <div><i className="fab fa-github"></i> github.com/islamhadjime</div>
           </div>
-          <div className="resume-note">Грозный | Россия | Готов к переезду и командировкам</div>
+          <div className="resume-note">Москва | Россия | Не готов к переезду, готов к редким командировкам</div>
         </div>
 
         <div className="contact-form-card glass-card">

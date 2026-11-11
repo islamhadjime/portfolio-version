@@ -8,7 +8,7 @@ import {
 } from '../data/projects';
 import ProjectModal from './ProjectModal';
 
-const categories: ProjectCategory[] = ['all', 'dosh', 'kf21', 'frelance'];
+const categories: ProjectCategory[] = ['all', 'mashar', 'kf21', 'dosh', 'frelance'];
 
 export default function Projects() {
   const [filter, setFilter] = useState<ProjectCategory>('all');
@@ -45,6 +45,7 @@ export default function Projects() {
               key={cat}
               className={`projects-filter-btn${filter === cat ? ' active' : ''}`}
               onClick={() => setFilter(cat)}
+              type="button"
             >
               {categoryLabels[cat]}
             </button>

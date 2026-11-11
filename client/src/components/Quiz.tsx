@@ -8,7 +8,7 @@ type Question = {
   correct: string;
 };
 
-const topics = ['JavaScript', 'TypeScript', 'React', 'Node.js'];
+const topics = ['React', 'TypeScript', 'Next.js', 'Node.js', 'Django', 'FastAPI'];
 
 export default function Quiz() {
   const [topic, setTopic] = useState('React');
@@ -56,7 +56,7 @@ export default function Quiz() {
   return (
     <section id="quiz" className="glass-card" style={{ padding: '2rem', margin: '3rem 0' }}>
       <h3 style={{ textAlign: 'center', marginBottom: '1rem' }}>
-        🧠 AI‑тест: проверь свои знания
+        AI-тест по стеку из резюме
       </h3>
       <div style={{ textAlign: 'center', marginBottom: '1rem' }}>
         <label style={{ marginRight: '1rem' }}>Выбери тему:</label>

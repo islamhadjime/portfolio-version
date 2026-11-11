@@ -1,5 +1,5 @@
 import { useEffect, useCallback } from 'react';
-import { assetUrl } from '../data/projects';
+import { assetUrl, getYoutubeEmbedUrl } from '../data/projects';
 import type { Project } from '../data/projects';
 
 interface ProjectModalProps {
@@ -11,12 +11,13 @@ interface ProjectModalProps {
 
 export default function ProjectModal({
   project,
-  imageIndex, 
+  imageIndex,
   onClose,
   onImageChange,
 }: ProjectModalProps) {
   const total = project.images.length;
-  const current = ((imageIndex % total) + total) % total;
+  const current = total > 0 ? ((imageIndex % total) + total) % total : 0;
+  const embedUrl = project.videoUrl ? getYoutubeEmbedUrl(project.videoUrl) : null;
 
   const goPrev = useCallback(() => onImageChange(current - 1), [current, onImageChange]);
   const goNext = useCallback(() => onImageChange(current + 1), [current, onImageChange]);
@@ -24,8 +25,8 @@ export default function ProjectModal({
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
-      if (e.key === 'ArrowLeft') goPrev();
-      if (e.key === 'ArrowRight') goNext();
+      if (e.key === 'ArrowLeft' && total > 1) goPrev();
+      if (e.key === 'ArrowRight' && total > 1) goNext();
     };
     document.addEventListener('keydown', onKey);
     document.body.style.overflow = 'hidden';
@@ -33,7 +34,7 @@ export default function ProjectModal({
       document.removeEventListener('keydown', onKey);
       document.body.style.overflow = '';
     };
-  }, [onClose, goPrev, goNext]);
+  }, [onClose, goPrev, goNext, total]);
 
   return (
     <div className="project-modal-overlay" onClick={onClose}>
@@ -43,28 +44,30 @@ export default function ProjectModal({
         </button>
 
         <div className="project-modal-gallery">
-          <div className="project-modal-image-wrap">
-            {total > 1 && (
-              <button className="project-modal-nav project-modal-nav--prev" onClick={goPrev} aria-label="Предыдущее">
-                <i className="fas fa-chevron-left" />
-              </button>
-            )}
-            <img
-              src={assetUrl(project.images[current])}
-              alt={`${project.title} — скриншот ${current + 1}`}
-              className="project-modal-image"
-            />
-            {total > 1 && (
-              <button className="project-modal-nav project-modal-nav--next" onClick={goNext} aria-label="Следующее">
-                <i className="fas fa-chevron-right" />
-              </button>
-            )}
-            {total > 1 && (
-              <span className="project-modal-counter">
-                {current + 1} / {total}
-              </span>
-            )}
-          </div>
+          {total > 0 && (
+            <div className="project-modal-image-wrap">
+              {total > 1 && (
+                <button className="project-modal-nav project-modal-nav--prev" onClick={goPrev} aria-label="Предыдущее">
+                  <i className="fas fa-chevron-left" />
+                </button>
+              )}
+              <img
+                src={assetUrl(project.images[current])}
+                alt={`${project.title} — скриншот ${current + 1}`}
+                className="project-modal-image"
+              />
+              {total > 1 && (
+                <button className="project-modal-nav project-modal-nav--next" onClick={goNext} aria-label="Следующее">
+                  <i className="fas fa-chevron-right" />
+                </button>
+              )}
+              {total > 1 && (
+                <span className="project-modal-counter">
+                  {current + 1} / {total}
+                </span>
+              )}
+            </div>
+          )}
 
           {total > 1 && (
             <div className="project-modal-thumbs">
@@ -78,6 +81,17 @@ export default function ProjectModal({
                   <img src={assetUrl(img)} alt="" />
                 </button>
               ))}
+            </div>
+          )}
+
+          {embedUrl && (
+            <div className="project-modal-video">
+              <iframe
+                src={embedUrl}
+                title={`${project.title} — демо`}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
             </div>
           )}
         </div>
@@ -112,7 +126,13 @@ export default function ProjectModal({
 
           {project.link && (
             <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-modal-link">
-              {project.linkLabel ?? 'Открыть проект'} <i className="fas fa-external-link-alt" />
+              {project.linkLabel ?? 'Открыть проект'}{' '}
+              <i className="fas fa-external-link-alt" />
+            </a>
+          )}
+          {project.videoUrl && project.videoUrl !== project.link && (
+            <a href={project.videoUrl} target="_blank" rel="noopener noreferrer" className="project-modal-link project-modal-link--video">
+              Смотреть демо <i className="fab fa-youtube" />
             </a>
           )}
         </div>
